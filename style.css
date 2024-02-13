@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root {
+  --primary:#629DD3;
+  --bg: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+#containerTitulo{
+  background-color: #1887f0;
+  border-radius: 50px;
+  max-width: 80%;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 50px;
+  position: fixed;
+  
+  
+}
+
+#dia{
+    width: 100px;
+}
+
+#ano{
+    width: 100px;
+}
+
+input{
+    width: 100%;
+}
+
+button{
+  margin: 30px;
+  height: 50px;
+  width: 100px;
+  background-color: #629DD3;
+  border: none;
+  color: white;
+  font-weight: 500;
+  display: none;
+}
+
+#titulo{
+  font-weight: 700;
+  font-size: 30px;
+  color: #fff;
+  max-width:100%;
+
+  
+  
+}
+
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.cabecalho {
+  padding: 30px;
+  background-color: var(--primary);
+  color: white;
+  text-transform: uppercase;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+
+.cabecalho a img {
+  height: 35px;
+  filter: invert(1);
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+#container1{
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
+
+}
+
+
+
+
+
+
+#local{
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+.formulario label {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+input, .btn, select {
+  height: 40px;
+  padding: 5px 12px;
+  margin-top: 10px;
+}
+
+.btn {
+  color: #fff;
+  background-color: var(--primary);
+  border: none;
+  cursor: pointer;
+  width: 300px;
+  border-radius: 20px;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+/* fieldset {
+  margin: 0 30px 30px 30px;
+  padding: 30px;
+} */
+
+legend {
+  padding: 0 10px;
+}
+
+h1{
+  text-align: center;
+  padding: 30px;
+}
+
+
+/* @media only screen and (max-width: 600px) {
+  h1 {
+   font-size: 20px;
+   max-width: 90%;
+  }
+
+  #res2{
+    max-width: 100%;
+  }
+} */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root {
+--primary-color: #629DD3;
+--background-color: #ffffff;
+--text-color: #333333;
+}
+
+body {
+font-family: 'Poppins', sans-serif;
+color: var(--text-color);
+background-color: var(--background-color);
+
+}
+
+
+header.cabecalho {
+background-color: var(--primary-color);
+padding: 1rem;
+width: 100%;
+text-align: center;
+color: #fff;
+}
+
+/* Responsividade */
+@media only screen and (max-width: 600px) {
+body {
+font-size: 90%;
+}
+
+header.cabecalho {
+padding:0px;
+}
+
+#imagemFront{
+    display: none;
+}
+
+#res2{
+    margin-bottom: 75px;
+    padding: 0px;
+}
+
+#container1{
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+   padding-left: 5px;
+  
+  }
+
+  #res2{
+    margin-bottom: 75px;
+    padding: 0px;
+}
+}
+
+
+
+a{
+    background-color: #fff;
+    padding: 3px;
+    border-radius: 20px;
+}
+
+.rodape{
+  position: fixed;
+bottom: 0;
+width: 100%;
+text-align: center;
+height: 80px;
+background-color: #1887f0;
+color: #fff;
+align-items: center;
+position: fixed;
+  bottom: 0;  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+padding-top: 10px;
+}
+
+#res2{
+    margin-bottom: 75px;
+    padding: 20px;
+}
+
+.cabecalho{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.login-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    
+  }
+  
+  .login-container h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .login-form input[type="submit"] {
+    background-color: #59b6f0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .login-form input[type="submit"]:hover {
+    background-color: #4da7d7;
+  }
+  
+  #pagina_login{
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    margin: 100px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu img {
+    height: 170px;
+    width: 170px;
+    border-radius: 90px;
+    object-fit: cover;
+    margin: 25px;
+  }
+  
+  .menu a:hover {
+    transform: scale(1.35);
+  }
+  
+  .menu a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--bg);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.5s;
+  }
+
+  .cabecalho a img {
+    height: 45px;
+    width: 45px;
+    
+    
+  }

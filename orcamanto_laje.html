@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Orçamentos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <h1>Gerador de Orçamentos impermeabilização Laje Protegida</h1>
+        <a href="menu.html"><img src="imagens/home.png" alt=""></a>
+    </header>
+    <div id="container1">
+
+
+
+        <div>
+            <form class="formulario" onsubmit="event.preventDefault();"></form>
+
+            <label for="dia">Dia: <br>
+                <input type="number" id="dia" required>
+            </label> <br>
+            <label for="mes">Mês: <br>
+                <select id="mes" required>
+                    <option value="janeiro">janeiro</option>
+                    <option value="fevereiro">fevereiro</option>
+                    <option value="março">março</option>
+                    <option value="abril">abril</option>
+                    <option value="maio">maio</option>
+                    <option value="junho">junho</option>
+                    <option value="julho">julho</option>
+                    <option value="agosto">agosto</option>
+                    <option value="setembro">setembro</option>
+                    <option value="outubro">outubro</option>
+                    <option value="novembro">novembro</option>
+                    <option value="dezembro">dezembro</option>
+                    </option>
+                </select>
+            </label><br>
+            <label for="ano">Ano com 4 digitos: <br>
+                <input type="text" id="ano" placeholder="Ano com 4 digitos" required>
+            </label> <br>
+            <label for="cliente">Nome do Cliente:
+                <input type="text" id="cliente" placeholder="Nome do Cliente" required>
+            </label>
+            <label for="obra">Endereço da Obra:
+                <input type="text" id="obra" placeholder="Obra" required>
+            </label>
+            <label for="ref">Serviço a ser executado:(exemplo: Impermeabilização de laje, etc.)
+                <input type="text" id="ref" placeholder="Referência" required>
+            </label>
+            <label for="emp">Nome da sua Empresa:
+                <input type="text" id="emp" placeholder="Nome da Empresa" required>
+            </label>
+            <label for="endereco">Endereço da sua Empresa:
+                <input type="text" id="endereco" placeholder="Insira Endereço da sua Empresa" required>
+            </label>
+            <label for="telefone">Telefone da sua Empresa:
+                <input type="tel" id="telefone" placeholder=" Insira Telefone da sua Empresa" required>
+            </label>
+            <label for="mmManta">Espessura da Manta mm:
+                <input type="number" id="mmManta" placeholder="Referência" required>
+            </label>
+            <label for="m2">Insira a metragem quadrada da área a ser impermeabilzada:
+                <input type="number" id="mquadrado" placeholder="Metragem quadrada da impermeabilização" required>
+
+            </label>
+            <label for="informacao">Como obteve a metragem para o orçamento?<br>
+                <select id="informacao" required>
+                    <option value="pelo cliente via whatsapp.">pelo cliente cliente via whatsapp</option>
+                    <option value="pelo cliente por telefone.">pelo cliente por telefone</option>
+                    <option value="por medição feita em visita ao local da obra.">por medição feita em visita ao local
+                        da obra
+                    </option>
+                    <option value="pelo projeto executivo enviado pelo cliente.">pelo projeto executivo enviado pelo
+                        cliente
+                    </option>
+                </select>
+            </label><br>
+            <label for="marcaManta">Marca da manta asfáltica:
+                <input type="text" id="marcaManta" placeholder="Marca da Manta" required>
+            </label>
+            <label for="marcaPrimer">Marca do Primer:
+                <input type="text" id="marcaPrimer" placeholder="Marca da Manta" required>
+            </label>
+            <label for="compraProduto">O valor do produto está incluso?<br>
+                <select id="compraProduto" required>
+                    <option value="incluindo os materiais">incluindo os materiais</option>
+                    <option value="excluindo os materiais">excluindo os materiais</option>
+                </select>
+            </label><br>
+
+            <label for="valorOrcamento">Valor do orçamento sem centavos:
+                <input type="number" id="valorOrcamento" placeholder="Valor do orçamento sem centavos" required>
+            </label>
+            <label for="formaPagamento">Insira forma de pagamento combinada com o cliente:
+                <input type="text" id="formaPagamento" placeholder="Condição de pagamento" required>
+            </label>
+            <label for="prazoExecucao">Prazo de Execução em dias:
+                <input type="number" id="prazoExecucao" placeholder="Prazo de execução em dias" required>
+
+            </label>
+
+            <label for="observacoes">Informações adicionais de responsabilidade do cliente:
+                <input type="text" id="observacoes" placeholder="Informações adicionais de responsabilidade do cliente" required>
+            </label>
+
+
+
+
+            <label for="">
+                &nbsp;
+                <input class="btn" type="submit" value="Gerar Orçamento" onclick="gerarPdf()"
+                    onsubmit="event.preventDefault();">
+            </label>
+        </div>
+
+
+
+    </div>
+
+
+    </form>
+
+
+
+    <fieldset>
+        <legend>
+            Resultado
+        </legend>
+
+        <div id="res2">
+            Insira os dados acima e clique em calcular.
+        </div>
+    </fieldset>
+
+
+
+    <footer class="rodape">
+        <p>&copy; 2023 Desenvolvido por Solução PME de Marília-SP. Todos os direitos reservados.
+            Contato: <br> <a
+                href="https://api.whatsapp.com/send?phone=5514997792544&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20que%20sua%20empresa%20oferece!">(14)
+                99779-2544</p></a>
+    </footer>
+
+    <!-- <button onclick="gerarPdf()" onsubmit="event.preventDefault();" id="botaoPdf">Salvar Orçamento</button> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"
+        integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //     function converterImagem() {
+
+        // var receberArquivos = document.getElementById("logo").files;
+        // // console.log(receberArquivos);
+
+        // if (receberArquivos.length > 0) {
+        //     var carregarImagem = receberArquivos[0];
+        //     // console.log(carregarImagem)
+        //     var lerArquivo = new FileReader();
+        //     lerArquivo.onload =function(arquivoCarregado){
+        //        var imagem64 = arquivoCarregado.target.result
+
+        //        //encio da imagem para html
+
+        //        var novaImagem = document.createElement('img')
+
+        //         novaImagem.src = imagem64;
+
+        //         document.getElementById("apresentarImagem").innerHTML =novaImagem.outerHTML;
+        //     }
+
+        //     lerArquivo.readAsDataURL(carregarImagem);
+
+
+        // }
+
+        // }
+
+
+        function gerarPdf() {
+
+            const dia = document.getElementById('dia').value;
+            const mes = document.getElementById('mes').value;
+            const ano = document.getElementById('ano').value;
+            const cliente = document.getElementById('cliente').value;
+            const obra = document.getElementById('obra').value;
+            const ref = document.getElementById('ref').value;
+            const emp = document.getElementById('emp').value;
+            const informacao = document.getElementById('informacao').value;
+            const mmManta = document.getElementById('mmManta').value;
+            const marcaManta = document.getElementById('marcaManta').value;
+            const marcaPrimer = document.getElementById('marcaPrimer').value;
+            const prazoExecucao = document.getElementById('prazoExecucao').value;
+            const formaPagamento = document.getElementById('formaPagamento').value;
+            const mquadrado = document.getElementById('mquadrado').value;
+            const valorOrcamento = document.getElementById('valorOrcamento').value;
+            const telefone = document.getElementById('telefone').value
+            const endereco = document.getElementById('endereco').value
+            const compraProduto = document.getElementById('compraProduto').value
+           const observacoes = document.getElementById('observacoes').value
+            res2.innerHTML = `<h1>ORÇAMENTO DE IMPERMEABILIZAÇÃO</h1><br><br> Marília, ${dia} de ${mes} de ${ano}. <br><br> CLIENTE: ${cliente} <br> OBRA: ${obra}<br>
+            Ref.: ${ref}<br><br> Prezado cliente, segue abaixo valores e especificações do serviço e produtos a serem utilizados na prestação <br> de serviços: <br><br>
+
+1. OBJETO DA PROPOSTA: <br>
+
+Conforme solicitado, fornecimento de mão de obra, ferramentas e materiais especificados, de acordo com os itens <br> descritos  nesta proposta.
+<br><br>
+2. CONDIÇÕES GERAIS DA PROPOSTA:
+Os valores apresentados nesta proposta foram calculados com base <br> nas informações fornecidas \n ${informacao}<br>
+<br>
+3. ESPECIFICAÇÃO DE MATERIAIS E SERVIÇOS:<br>
+- Utilização de manta asfáltica de ${mmManta}mm da marca ${marcaManta}.<br>
+- Emendas realizadas por soldagem através de maçarico.<br>
+- Aplicação do primer a base de asfalto da marca ${marcaPrimer} antes da aplicação da manta.<br>
+- Aplicação da manta sobre superfície previamente regularizada pelo cliente com caída de 1% para o escoamento.<br>
+- Instalação de rodapé de aproximadamente 20cm.<br>
+- O preparo da base e proteção mecânica são de responsabilidade do cliente.<br>
+<br>
+4. PREÇOS DOS MATERIAIS E SERVIÇOS:<br>
+- O valor do serviço de impermeabilização, ${compraProduto}, para uma metragem de ${mquadrado} m2 é de R$ ${valorOrcamento},00.<br><br>
+
+5. VALIDADE DA PROPOSTA:<br>
+- Esta proposta está sujeita a alterações.<br>
+<br>
+6. CONDIÇÕES DE PAGAMENTO:<br>
+- O valor referente a execução do serviço deverá ser pago ${formaPagamento}.<br>
+<br>
+7. PRAZO DE EXECUÇÃO:<br>
+- O prazo de execução será  de aproximadamente ${prazoExecucao} dias ou estabelecido de acordo com o cronograma da obra.<br><br>
+
+8. GARANTIA DOS SERVIÇOS:<br>
+- Conforme o Código de Defesa do Consumidor, a garantia dos serviços será de 5 anos. No entanto, o cliente \n perderá <br>a garantia caso ocorram danos <br> externos à impermeabilização causados por terceiros, como perfurações \n para  <br> instalação de antenas ou bases para painéis solares, por exemplo.<br><br>
+
+9. CONSIDERAÇÕES GERAIS:<br>
+
+ 9.1. A cargo da CONTRATADA:<br>
+- Fornecimento de mão de obra.<br>
+- Fornecimento de materiais e ferramentas.<br>
+- Recolhimento dos encargos referentes aos serviços prestados.<br><br>
+
+9.2. A cargo do CLIENTE:<br>
+- Disponibilização de água, areia e cimento.<br>
+- Serviços de encanador e eletricista(se necessário).<br>
+- Preparo da base e acabamento final.<br>
+- Permitir livre acesso aos funcionários da CONTRATADA durante o horário comercial.<br>
+- ${observacoes}<br><br>
+
+   Atenciosamente,<br>
+        -------------------------------------<br>
+           ${emp}<br>
+            ${endereco}<br>
+            ${telefone}<br>
+        -------------------------------------`
+
+            var conteudo = document.getElementById('res2').innerText
+            var doc = new jsPDF()
+            doc.setFontSize(10);
+            doc.text(conteudo, 15, 35)
+            doc.save('orçamento.pdf')
+
+
+        }
+
+        function aparecerBotao() {
+            var square = document.getElementById("botaoPdf");
+            square.style.display = "block";
+        }
+
+
+
+    </script>
+</body>
+
+</html>
